@@ -1,0 +1,33 @@
+[ req ]
+default_bits = 4096
+default_keyfile = ca.default_keyfile
+distinguished_name = req_distinguished_name
+x509_extensions = v3_ca
+string_mask = nombstr
+req_extensions = v3_req
+
+[ req_distinguished_name ]
+countryName = Country Name (2 letter code)
+countryName_default = FR
+countryName_min = 2
+countryName_max = 2
+stateOrProvinceName = State or Province Name (full name)
+stateOrProvinceName_default = FRANCE
+localityName = LocalityName (eg, city)
+localityName_default = Limoges
+0.organizationalUnitName = Organization Name (eg, country)
+0.organizationalUnitName_default = Master 1
+organizationalUnitName = Organizational Unit Name (eg, section)
+organizationalUnitName_default = Service de Certification
+commonName = Common Name (eg, Mon autorité de Certification)
+commonName_default = CertiPlus
+commonName_max = 64
+emailAddress = Email Address (eg, celle du responsable)
+emailAddress_max = 40
+
+[ v3_ca ]
+basicConstraints = critical,CA:true
+subjectKeyIdentifier = hash
+
+[ v3_req ]
+nsCertType = server
